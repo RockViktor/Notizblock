@@ -1,0 +1,232 @@
+body {
+    background-color: #fff;
+    color: #202124;
+    direction: ltr;
+    font-family: "Roboto", arial, sans-serif;
+    font-size: 15px;
+    margin: 0;
+    min-width: 360px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-left: 0;
+}
+
+.nav-bar {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 14%);
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 8px;
+}
+
+.all-in {
+    display: flex;
+    gap: 55px;
+}
+
+.burger-menu {
+    height: 18px;
+    width: 24px;
+    color: #5f6368;
+    opacity: 1;
+}
+
+.trash-bin-outline {
+    width: 16px;
+}
+
+.keep-logo {
+    height: 36px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%);
+}
+
+.part-left {
+    text-decoration: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: 24px;
+    margin-top: 16px;
+    font-size: 22px;
+    color: #5f6368;
+    opacity: 1;
+}
+
+.part-center {
+    margin-left: 84px;
+}
+
+.magn-glass {
+    height: 19px;
+    padding-left: 4px;
+}
+
+.button-search {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13px;
+    margin-left: 8px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    background-color: #f1f3f4;
+    border-radius: 50%;
+    border: none;
+}
+
+.input-search {
+    margin-right: 24px;
+    margin-top: 8px;
+    height: 46px;
+    color: #5f6368;
+    background-color: #f1f3f4;
+    border-radius: 8px;
+    border: none;
+    padding-left: 56px;
+    width: 60vh;
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont-add-note {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 1px 3px 2px rgb(0 0 0 / 14%);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 8px 8px 8px 8px;
+    width: 560px;
+}
+
+.card {
+    color: #5f6368;
+    margin-bottom: 64px;
+    margin-left: 16px;
+    box-shadow: 0px 0px 5px 2px rgb(0 0 0 / 10%);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 8px 8px 8px 8px;
+    width: 240px;
+    word-wrap: break-word;
+    font-weight: 400;
+}
+
+.titel-save {
+    font-weight: bold;
+}
+
+.your-notes {
+    color: #5f6368;
+    padding: 16px;
+}
+
+.content {
+    margin: 55px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input-titel {
+    height: 24px;
+    width: 100%;
+    border: none;
+    font: 16px/27px Roboto, Arial, sans-serif;
+    font-weight: bold;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    color: #5f6368;
+}
+
+.input-Note {
+    width: 100%;
+    border: none;
+    font: 14px/27px Roboto, Arial, sans-serif;
+    font-weight: 400;
+    margin-top: 8px;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    color: #5f6368;
+}
+
+.delete-button {
+    margin-top: 16px;
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%);
+    width: 24px;
+    height: 24px;
+    color: #5f6368;
+}
+
+.button-add-note {
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%);
+    padding: 6px;
+    margin-top: 16px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 0px;
+    border-color: #f1f3f4;
+    background-color: #f1f3f4;
+    color: #5f6368;
+}
+
+input:focus {
+    box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 10%);
+    outline: none;
+    /* Entfernt die Standard-Klick-Kontur (outline) */
+    border-radius: 8px;
+    /* Setzt den border-radius auf 0 beim Klicken */
+    /* Weitere gewünschte Stile für den Fokus-Zustand können hier hinzugefügt werden */
+    background-color: white
+}
+
+textarea:focus {
+    /* box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 10%); Anstatt org. Borderline, eigene Umrandung */
+    outline: none;
+    /* Borderline ausmachen */
+    /* Entfernt die Standard-Klick-Kontur (outline) */
+    border-radius: 8px;
+    /* Setzt den border-radius auf 0 beim Klicken */
+    /* Weitere gewünschte Stile für den Fokus-Zustand können hier hinzugefügt werden */
+    background-color: white
+}
+
+textarea {
+    width: 100%;
+    /* Das Textarea-Feld nimmt die volle Breite des Containers ein */
+    box-sizing: border-box;
+    /* Berücksichtigt Padding und Border in der Gesamtbreite */
+    overflow-y: hidden;
+    /* Verhindert das Scrollen im Textfeld */
+    resize: none;
+    /* Deaktiviert das manuelle Ändern der Größe durch den Benutzer */
+}
+
+.title-notes {
+    font-weight: bold;
+}
+
+.part-vor-bin {
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    border-radius: 0 20px 20px 0;
+    height: 40px;
+    width: 40px;
+    background-color: #f1f3f4;
+    cursor: pointer;
+    position: absolute;
+    top: 80px;
+}
+
+.d-none {
+    display: none;
+}
