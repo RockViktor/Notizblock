@@ -68,6 +68,10 @@ function deleteNotes(i) {
     render();
     renderRemovedNotes();
     save();
+
+    saveDelet();
+    save();
+    render();
 }
 
 function save() {
