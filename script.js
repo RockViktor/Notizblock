@@ -65,9 +65,9 @@ function deleteNotes(i) {
     removedWritingsNotes.push(writingsNotes[i]);
     notesTitle.splice(i, 1);
     writingsNotes.splice(i, 1);
-    render();
-    renderRemovedNotes();
     save();
+    render();
+    
 
     saveDelet();
     save();
