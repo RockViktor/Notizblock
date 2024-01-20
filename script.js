@@ -5,12 +5,19 @@ let writingsNotes = [];
 let removedNotesTitle = [];
 let removedWritingsNotes = [];
 
+/**
+ * Load storage in to array.
+ * Render notes content.
+ */
 async function init() {
   await load();
   await loadDeleteFiles();
   render();
 }
 
+/**
+ *  Render notes content.
+ */
 function render() {
   let content = document.getElementById("content");
   content.innerHTML = "";
@@ -32,6 +39,9 @@ function render() {
   }
 }
 
+/**
+ * Render removed notes content. 
+ */
 function renderRemovedNotes() {
   let content = document.getElementById("removedContent");
   content.innerHTML = "";
@@ -53,6 +63,9 @@ function renderRemovedNotes() {
   }
 }
 
+/**
+ * Push currently notes in to array. 
+ */
 function addNotes() {
   let title = document.getElementById("title");
   let note = document.getElementById("note");
@@ -65,6 +78,10 @@ function addNotes() {
   save();
 }
 
+/**
+ * 
+ * @param {Currently index of delete notes} i 
+ */
 function deleteNotes(i) {
   removedNotesTitle.push(notesTitle[i]);
   removedWritingsNotes.push(writingsNotes[i]);
@@ -76,6 +93,9 @@ function deleteNotes(i) {
   render();
 }
 
+/**
+ *  Save delete notes in to storage.
+ */
 function saveDelete() {
   let removedNotesTitleAsText = JSON.stringify(removedNotesTitle);
   localStorage.setItem("removedNotesTitleKey", removedNotesTitleAsText);
@@ -84,6 +104,9 @@ function saveDelete() {
   localStorage.setItem("removedNotesKey", removedWritingsNotesAsText);
 }
 
+/**
+ *  Save notes in to storage.
+ */
 function save() {
   let notesTitleAsText = JSON.stringify(notesTitle);
   localStorage.setItem("notesTitleKey", notesTitleAsText);
@@ -92,6 +115,9 @@ function save() {
   localStorage.setItem("writingsNotesKey", writingsNotesAsText);
 }
 
+/**
+ * Load notes from localstorage in to array.
+ */
 function load() {
   let notesTitleAsText = localStorage.getItem("notesTitleKey");
   let writingsNotesAsText = localStorage.getItem("writingsNotesKey");
@@ -102,7 +128,7 @@ function load() {
 }
 
 /**
- * Put trash notes from storage in to array.
+ * Load trash notes from storage in to array.
  */
 function loadDeleteFiles() {
   let removedNotesTitleAsText = localStorage.getItem("removedNotesTitleKey");
