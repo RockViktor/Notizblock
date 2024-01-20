@@ -65,13 +65,17 @@ function deleteNotes(i) {
     removedWritingsNotes.push(writingsNotes[i]);
     notesTitle.splice(i, 1);
     writingsNotes.splice(i, 1);
+    saveDelete();
     save();
     render();
-    
+}
 
-    saveDelet();
-    save();
-    render();
+function saveDelet() {
+    let removedNotesTitleAsText = JSON.stringify(removedNotesTitle);
+    localStorage.setItem('removedNotesTitleKey', removedNotesTitleAsText);
+
+    let removedWritingsNotesAsText = JSON.stringify(removedWritingsNotes);
+    localStorage.setItem('removedNotesKey', removedWritingsNotesAsText);
 }
 
 function save() {
