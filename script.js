@@ -124,6 +124,11 @@ function binArea(){
     renderRemovedNotes();
 }
 
-function backToNotes(){
-    render();
+function backToNotes() {
+    let content = document.getElementById("content");
+    let removedContent = document.getElementById("removedContent");
+    content.classList.remove("d-none");
+    removedContent.classList.add("d-none");
+
+  render();
 }
