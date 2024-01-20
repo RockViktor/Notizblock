@@ -13,7 +13,7 @@
     />
   </head>
 
-  <body onload="render()">
+  <body onload="init()">
     <div id="organizer">
       <header class="nav-bar">
         <div class="all-in">
@@ -80,7 +80,7 @@
 
       <div class="content" id="content"></div>
 
-      <div id="removed-content" class="d-none content"></div>
+      <div id="removedContent" class="d-none content"></div>
 
       <div onclick="binArea()" class="part-vor-bin">
         <img
@@ -89,6 +89,7 @@
           alt="mobile-menu"
         />
       </div>
+      <div onclick="backToNotes()" class="backNotes">xy</div>
     </div>
   </body>
 </html>

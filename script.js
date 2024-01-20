@@ -4,7 +4,12 @@ let notesTitle = [];
 let writingsNotes = [];
 let removedNotesTitle = [];
 let removedWritingsNotes = [];
-load();
+
+async function init() {
+    await load();
+    await loadDeleteFiles();
+    render();
+  }
 
 function render(){
     let content = document.getElementById('content');
@@ -28,7 +33,7 @@ function render(){
 }
 
 function renderRemovedNotes(){
-    let content = document.getElementById('removed-content');
+    let content = document.getElementById('removedContent');
     content.innerHTML = '';
 
     for (let i = 0; i < removedNotesTitle.length; i++) {
@@ -67,10 +72,10 @@ function deleteNotes(i) {
     writingsNotes.splice(i, 1);
     saveDelete();
     save();
-    render();
+    render(); 
 }
 
-function saveDelet() {
+function saveDelete() {
     let removedNotesTitleAsText = JSON.stringify(removedNotesTitle);
     localStorage.setItem('removedNotesTitleKey', removedNotesTitleAsText);
 
@@ -95,6 +100,15 @@ function load() {
     }
 }
 
+function loadDeleteFiles() {
+    let removedNotesTitleAsText = localStorage.getItem('removedNotesTitleKey');
+    let removedNotesAsText = localStorage.getItem('removedNotesKey');
+    if (removedNotesTitleAsText && removedNotesAsText) {
+        removedNotesTitle = JSON.parse(removedNotesTitleAsText);
+        removedWritingsNotes = JSON.parse(removedNotesAsText);
+    }
+}
+
 function showInputBox() {
     let input = document.getElementById('note');
     let button = document.getElementById('btnNote');
@@ -104,9 +118,12 @@ function showInputBox() {
 
 function binArea(){
     let content = document.getElementById('content');
-    let removedContent = document.getElementById('removed-content');
+    let removedContent = document.getElementById('removedContent');
     content.classList.add('d-none');
     removedContent.classList.remove('d-none');
+    renderRemovedNotes();
 }
 
-
+function backToNotes(){
+    render();
+}
