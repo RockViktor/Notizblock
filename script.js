@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 let notesTitle = [];
 let writingsNotes = [];
@@ -6,20 +6,20 @@ let removedNotesTitle = [];
 let removedWritingsNotes = [];
 
 async function init() {
-    await load();
-    await loadDeleteFiles();
-    render();
-  }
+  await load();
+  await loadDeleteFiles();
+  render();
+}
 
-function render(){
-    let content = document.getElementById('content');
-    content.innerHTML = '';
+function render() {
+  let content = document.getElementById("content");
+  content.innerHTML = "";
 
-    for (let i = 0; i < notesTitle.length; i++) {
-        const titel = notesTitle[i];
-        const note = writingsNotes[i];
+  for (let i = 0; i < notesTitle.length; i++) {
+    const titel = notesTitle[i];
+    const note = writingsNotes[i];
 
-        content.innerHTML += /*html*/ `
+    content.innerHTML += /*html*/ `
             <div class="card">
                 <div class="title-notes">
                     <b>${titel}</b>  <br><br>
@@ -29,18 +29,18 @@ function render(){
                 <button class="delete-button" onclick="deleteNotes(${i})">-</button>
             </div>
         `;
-    }
+  }
 }
 
-function renderRemovedNotes(){
-    let content = document.getElementById('removedContent');
-    content.innerHTML = '';
+function renderRemovedNotes() {
+  let content = document.getElementById("removedContent");
+  content.innerHTML = "";
 
-    for (let i = 0; i < removedNotesTitle.length; i++) {
-        const titel = removedNotesTitle[i];
-        const note = removedWritingsNotes[i];
+  for (let i = 0; i < removedNotesTitle.length; i++) {
+    const titel = removedNotesTitle[i];
+    const note = removedWritingsNotes[i];
 
-        content.innerHTML += /*html*/ `
+    content.innerHTML += /*html*/ `
             <div class="card">
                 <div class="title-notes">
                     <b>${titel}</b> <br><br>
@@ -50,80 +50,99 @@ function renderRemovedNotes(){
                 <button class="delete-button" onclick="deleteNotes(${i})">-</button>
             </div>
         `;
-    }
+  }
 }
 
-function addNotes(){
-    let title = document.getElementById('title');
-    let note = document.getElementById('note');
+function addNotes() {
+  let title = document.getElementById("title");
+  let note = document.getElementById("note");
 
-    notesTitle.push(title.value);
-    writingsNotes.push(note.value);
-    document.getElementById('title').value='';
-    document.getElementById('note').value='';
-    render();
-    save();
+  notesTitle.push(title.value);
+  writingsNotes.push(note.value);
+  document.getElementById("title").value = "";
+  document.getElementById("note").value = "";
+  render();
+  save();
 }
 
 function deleteNotes(i) {
-    removedNotesTitle.push(notesTitle[i]);
-    removedWritingsNotes.push(writingsNotes[i]);
-    notesTitle.splice(i, 1);
-    writingsNotes.splice(i, 1);
-    saveDelete();
-    save();
-    render(); 
+  removedNotesTitle.push(notesTitle[i]);
+  removedWritingsNotes.push(writingsNotes[i]);
+  notesTitle.splice(i, 1);
+  writingsNotes.splice(i, 1);
+  saveDelete();
+  save();
+  console.log("Notiz gelöscht und Löschung gespeichert.");
+  render();
 }
 
 function saveDelete() {
-    let removedNotesTitleAsText = JSON.stringify(removedNotesTitle);
-    localStorage.setItem('removedNotesTitleKey', removedNotesTitleAsText);
+  let removedNotesTitleAsText = JSON.stringify(removedNotesTitle);
+  localStorage.setItem("removedNotesTitleKey", removedNotesTitleAsText);
 
-    let removedWritingsNotesAsText = JSON.stringify(removedWritingsNotes);
-    localStorage.setItem('removedNotesKey', removedWritingsNotesAsText);
+  let removedWritingsNotesAsText = JSON.stringify(removedWritingsNotes);
+  localStorage.setItem("removedNotesKey", removedWritingsNotesAsText);
 }
 
 function save() {
-    let notesTitleAsText = JSON.stringify(notesTitle);
-    localStorage.setItem('notesTitleKey', notesTitleAsText);
+  let notesTitleAsText = JSON.stringify(notesTitle);
+  localStorage.setItem("notesTitleKey", notesTitleAsText);
 
-    let writingsNotesAsText = JSON.stringify(writingsNotes);
-    localStorage.setItem('writingsNotesKey', writingsNotesAsText);
+  let writingsNotesAsText = JSON.stringify(writingsNotes);
+  localStorage.setItem("writingsNotesKey", writingsNotesAsText);
 }
 
 function load() {
-    let notesTitleAsText = localStorage.getItem('notesTitleKey');
-    let writingsNotesAsText = localStorage.getItem('writingsNotesKey');
-    if (notesTitleAsText && writingsNotesAsText) {
-        notesTitle = JSON.parse(notesTitleAsText);
-        writingsNotes = JSON.parse(writingsNotesAsText);
-    }
+  let notesTitleAsText = localStorage.getItem("notesTitleKey");
+  let writingsNotesAsText = localStorage.getItem("writingsNotesKey");
+  if (notesTitleAsText && writingsNotesAsText) {
+    notesTitle = JSON.parse(notesTitleAsText);
+    writingsNotes = JSON.parse(writingsNotesAsText);
+  }
 }
 
+/**
+ * Put trash notes from storage in to array.
+ */
 function loadDeleteFiles() {
-    let removedNotesTitleAsText = localStorage.getItem('removedNotesTitleKey');
-    let removedNotesAsText = localStorage.getItem('removedNotesKey');
-    if (removedNotesTitleAsText && removedNotesAsText) {
-        removedNotesTitle = JSON.parse(removedNotesTitleAsText);
-        removedWritingsNotes = JSON.parse(removedNotesAsText);
-    }
+  let removedNotesTitleAsText = localStorage.getItem("removedNotesTitleKey");
+  let removedNotesAsText = localStorage.getItem("removedNotesKey");
+  if (removedNotesTitleAsText && removedNotesAsText) {
+    removedNotesTitle = JSON.parse(removedNotesTitleAsText);
+    removedWritingsNotes = JSON.parse(removedNotesAsText);
+  }
 }
 
+/**
+ * If you click input, show text-area.
+ */
 function showInputBox() {
-    let input = document.getElementById('note');
-    let button = document.getElementById('btnNote');
-    input.classList.remove('d-none');
-    button.classList.remove('d-none');
+  let input = document.getElementById("note");
+  let button = document.getElementById("btnNote");
+  input.classList.remove("d-none");
+  button.classList.remove("d-none");
 }
 
-function binArea(){
-    let content = document.getElementById('content');
-    let removedContent = document.getElementById('removedContent');
-    content.classList.add('d-none');
-    removedContent.classList.remove('d-none');
-    renderRemovedNotes();
+/**
+ * Remove note content and add trash content.
+ */
+function binArea() {
+  let content = document.getElementById("content");
+  let removedContent = document.getElementById("removedContent");
+  content.classList.add("d-none");
+  removedContent.classList.remove("d-none");
+
+  renderRemovedNotes();
 }
 
-function backToNotes(){
-    render();
+/**
+ * Remove trash content and add note content.
+ */
+function backToNotes() {
+  let content = document.getElementById("content");
+  let removedContent = document.getElementById("removedContent");
+  content.classList.remove("d-none");
+  removedContent.classList.add("d-none");
+
+  render();
 }
