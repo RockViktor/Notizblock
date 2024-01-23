@@ -34,22 +34,12 @@
 
           <div class="header-section-center">
             <div class="part-center">
-              <form class="find-me">
-                <div class="cont-for-input">
-                  <button
-                    class="button-search"
-                    aria-label="Search"
-                    role="button"
-                  >
-                    <img class="magn-glass" src="./img/Lupe.png" alt="Lupe" />
-                  </button>
-                  <input
-                    class="input-search"
-                    type="text"
-                    placeholder="Search"
-                  />
-                </div>
-              </form>
+              <div class="cont-for-input">
+                <button class="button-search" aria-label="Search" role="button">
+                  <img class="magn-glass" src="./img/Lupe.png" alt="Lupe" />
+                </button>
+                <input class="input-search" type="text" placeholder="Search" />
+              </div>
             </div>
           </div>
         </div>
@@ -60,6 +50,7 @@
 
         <form class="cont-add-note" onsubmit="addNotes()">
           <input
+            required
             onclick="showInputBox()"
             class="input-titel"
             id="title"
@@ -67,6 +58,7 @@
             placeholder="Title"
           />
           <textarea
+            required
             class="input-Note d-none"
             id="note"
             type="text"
@@ -89,7 +81,13 @@
           alt="mobile-menu"
         />
       </div>
-      <button onclick="backToNotes()">Notes</button>
+      <div onclick="backToNotes()" class="backNotes">
+        <img
+          src="./img/bulb-light-icon.svg"
+          class="trash-bin-outline"
+          alt="mobile-menu"
+        />
+      </div>
     </div>
   </body>
 </html>

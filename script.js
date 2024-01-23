@@ -33,14 +33,14 @@ function render() {
                 </div>
                 
                 <div> ${note} </div><br>
-                <button class="delete-button" onclick="deleteNotes(${i})">-</button>
+                <button class="deleteButton" onclick="deleteNotes(${i})">-</button>
             </div>
         `;
   }
 }
 
 /**
- * Render removed notes content. 
+ * Render removed notes content.
  */
 function renderRemovedNotes() {
   let content = document.getElementById("removedContent");
@@ -51,20 +51,41 @@ function renderRemovedNotes() {
     const note = removedWritingsNotes[i];
 
     content.innerHTML += /*html*/ `
-            <div class="card">
+            <div class="cardInBasket">
                 <div class="title-notes">
                     <b>${titel}</b> <br><br>
                 </div>
                 
-                <div>${note}</div> <br>
-                <button class="delete-button" onclick="deleteNotes(${i})">-</button>
+                <div>${note}</div>
+                <div class="btnBox">
+                <button class="removedButton" onclick="removedNotes(${i})">-</button>
+                <button class="recoverButton" onclick="recoverNotes(${i})">+</button>
+                </div>
+                
             </div>
         `;
   }
 }
 
+function recoverNotes(i) {
+  notesTitle.push(removedNotesTitle[i]);
+  writingsNotes.push(removedWritingsNotes[i]);
+  removedNotesTitle.splice(i, 1);
+  removedWritingsNotes.splice(i, 1);
+  saveDelete();
+  save();
+  renderRemovedNotes();
+}
+
+function removedNotes(i) {
+  removedNotesTitle.splice(i, 1);
+  removedWritingsNotes.splice(i, 1);
+  saveDelete();
+  renderRemovedNotes();
+}
+
 /**
- * Push currently notes in to array. 
+ * Push currently notes in to array.
  */
 function addNotes() {
   let title = document.getElementById("title");
@@ -79,8 +100,8 @@ function addNotes() {
 }
 
 /**
- * 
- * @param {Currently index of delete notes} i 
+ *
+ * @param {Currently index of delete notes} i
  */
 function deleteNotes(i) {
   removedNotesTitle.push(notesTitle[i]);
@@ -89,7 +110,6 @@ function deleteNotes(i) {
   writingsNotes.splice(i, 1);
   saveDelete();
   save();
-  console.log("Notiz gelöscht und Löschung gespeichert.");
   render();
 }
 
@@ -157,7 +177,6 @@ function binArea() {
   let removedContent = document.getElementById("removedContent");
   content.classList.add("d-none");
   removedContent.classList.remove("d-none");
-
   renderRemovedNotes();
 }
 
@@ -169,6 +188,5 @@ function backToNotes() {
   let removedContent = document.getElementById("removedContent");
   content.classList.remove("d-none");
   removedContent.classList.add("d-none");
-
   render();
 }
