@@ -16,15 +16,15 @@ body {
 
 }
 
+.all-in {
+  display: flex;
+  gap: 55px;
+}
+
 .nav-bar {
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 14%);
   border-bottom: 1px solid lightgray;
   padding-bottom: 8px;
-}
-
-.all-in {
-  display: flex;
-  gap: 55px;
 }
 
 .burger-menu {
@@ -41,7 +41,6 @@ body {
 .keep-logo {
   height: 36px;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%);
-  filter: drop-shadow(-7px 7px 3px gray);
 }
 
 .part-left {
@@ -54,6 +53,7 @@ body {
   font-size: 22px;
   color: #5f6368;
   opacity: 1;
+  filter: drop-shadow(-10px 11px 2px gray);
 }
 
 .part-center {
@@ -173,6 +173,11 @@ body {
   overflow-wrap: break-word;
   word-break: break-all;
   color: #5f6368;
+}
+
+.input-titel:focus {
+  outline: transparent;
+  box-shadow: none;
 }
 
 .input-Note {
