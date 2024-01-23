@@ -264,7 +264,7 @@ input:focus {
   outline: none;
   /* Entfernt die Standard-Klick-Kontur (outline) */
   border-radius: 8px;
-  /* Setzt den border-radius auf 0 beim Klicken */
+  /* Setzt den border-radius auf "0" beim Klicken */
   /* Weitere gewünschte Stile für den Fokus-Zustand können hier hinzugefügt werden */
   background-color: white;
 }

@@ -66,7 +66,10 @@ function renderRemovedNotes() {
         `;
   }
 }
-
+/**
+ *
+ * @param {Currently index of recover notes}} i
+ */
 function recoverNotes(i) {
   notesTitle.push(removedNotesTitle[i]);
   writingsNotes.push(removedWritingsNotes[i]);
@@ -76,7 +79,10 @@ function recoverNotes(i) {
   save();
   renderRemovedNotes();
 }
-
+/**
+ *
+ * @param {Currently index of remove notes}} i
+ */
 function removedNotes(i) {
   removedNotesTitle.splice(i, 1);
   removedWritingsNotes.splice(i, 1);
