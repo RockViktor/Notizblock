@@ -14,80 +14,72 @@
   </head>
 
   <body onload="init()">
-    <div id="organizer">
-      <header class="nav-bar">
-        <div class="all-in">
-          <div class="header-section-left">
-            <a href="index.html" class="part-left">
-              <img
-                src="./img/burgerMenüNew.png"
-                class="burger-menu"
-                alt="mobile-menu"
-              />
-              <img
-                src="./img/Notes.png"
-                class="keep-logo"
-                alt="keep-logo"
-              />Save
-            </a>
-          </div>
+    <header class="nav-bar">
+      <div class="all-in">
+        <div class="header-section-left">
+          <a href="index.html" class="part-left">
+            <img
+              src="./img/burgerMenüNew.png"
+              class="burger-menu"
+              alt="mobile-menu"
+            />
+            <img src="./img/Notes.png" class="keep-logo" alt="keep-logo" />Save
+          </a>
+        </div>
 
-          <div class="header-section-center">
-            <div class="part-center">
-              <div class="cont-for-input">
-                <button class="button-search" aria-label="Search" role="button">
-                  <img class="magn-glass" src="./img/Lupe.png" alt="Lupe" />
-                </button>
-                <input class="input-search" type="text" placeholder="Search" />
-              </div>
-            </div>
+        <div class="part-center">
+          <div class="cont-for-input">
+            <button class="button-search" aria-label="Search" role="button">
+              <img class="magn-glass" src="./img/Lupe.png" alt="Lupe" />
+            </button>
+            <input class="input-search" type="text" placeholder="Search" />
           </div>
         </div>
-      </header>
-
-      <section class="headline">
-        <h1 class="your-notes">Your Notes</h1>
-
-        <form class="cont-add-note" onsubmit="addNotes()">
-          <input
-            required
-            onclick="showInputBox()"
-            class="input-titel"
-            id="title"
-            type="text"
-            placeholder="Title"
-          />
-          <textarea
-            required
-            class="input-Note d-none"
-            id="note"
-            type="text"
-            placeholder="Take a note"
-            cols="30"
-            rows="10"
-          ></textarea>
-          <button class="button-add-note d-none" id="btnNote">+</button>
-        </form>
-      </section>
-
-      <div class="content" id="content"></div>
-
-      <div id="removedContent" class="d-none content"></div>
-
-      <div onclick="binArea()" class="part-vor-bin">
-        <img
-          src="./img/red-trash-can-icon.svg"
-          class="trash-bin-outline"
-          alt="mobile-menu"
-        />
       </div>
-      <div onclick="backToNotes()" class="backNotes">
-        <img
-          src="./img/invention-icon.svg"
-          class="trash-bin-outline"
-          alt="mobile-menu"
+    </header>
+
+    <section class="headline">
+      <h1 class="your-notes">Your Notes</h1>
+
+      <form class="cont-add-note" onsubmit="addNotes()">
+        <input
+          required
+          onclick="showInputBox()"
+          class="input-titel"
+          id="title"
+          type="text"
+          placeholder="Title"
         />
-      </div>
+        <textarea
+          required
+          class="input-Note d-none"
+          id="note"
+          type="text"
+          placeholder="Take a note"
+          cols="30"
+          rows="4"
+        ></textarea>
+        <button class="button-add-note d-none" id="btnNote">+</button>
+      </form>
+    </section>
+
+    <div class="content" id="content"></div>
+
+    <div id="removedContent" class="d-none content"></div>
+
+    <div onclick="binArea()" class="part-vor-bin">
+      <img
+        src="./img/red-trash-can-icon.svg"
+        class="trash-bin-outline"
+        alt="mobile-menu"
+      />
+    </div>
+    <div onclick="backToNotes()" class="backNotes">
+      <img
+        src="./img/invention-icon.svg"
+        class="trash-bin-outline"
+        alt="mobile-menu"
+      />
     </div>
   </body>
 </html>
