@@ -328,7 +328,7 @@ textarea {
 
 @media (max-width:768px) {
   .part-center {
-    margin-left: 0px;
+    margin-left: 1rem;
   }
 
   .input-search {
@@ -342,10 +342,6 @@ textarea {
 }
 
 @media (max-width:576px) {
-  .part-center {
-    margin-left: 0px;
-  }
-
   .input-search {
     width: 328px;
   }
@@ -357,10 +353,6 @@ textarea {
 }
 
 @media (max-width:550px) {
-  .part-center {
-    margin-left: 0px;
-  }
-
   .input-search {
     width: 248px;
   }
@@ -372,10 +364,6 @@ textarea {
 }
 
 @media (max-width:456px) {
-  .part-center {
-    margin-left: 0px;
-  }
-
   .input-search {
     width: 208px;
   }
@@ -405,7 +393,7 @@ textarea {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 340px) {
 
   .cont-add-note {
     width: 160px;
