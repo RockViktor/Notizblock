@@ -1,47 +1,42 @@
-"use strict";
-
 let notesTitle = [];
 let writingsNotes = [];
 let removedNotesTitle = [];
 let removedWritingsNotes = [];
+let currentIndex = -1;
 
-let currentIndex = -1; // Variable, um den Index der zu bearbeitenden Notiz zu verfolgen
-
+/**
+ * The note that the user wants to change.
+ * @param {Currently note} i
+ */
 function editNotes(i) {
-  currentIndex = i; // Setzen Sie den Index der zu bearbeitenden Notiz
+  currentIndex = i;
   let title = document.getElementById("title");
   let note = document.getElementById("note");
-
-  // Füllen Sie die Eingabefelder mit den aktuellen Notizdaten der ausgewählten Karte
   title.value = notesTitle[i];
   note.value = writingsNotes[i];
 
-  // Ändern Sie den Hinzufügen-Button in einen Aktualisieren-Button
   let addButton = document.getElementById("btnNote");
-  addButton.innerText = "Update";
+  addButton.innerText = "+";
   addButton.onclick = function () {
     updateNotes();
   };
 }
 
+/**
+ * Save the note you want to change.
+ */
 function updateNotes() {
   let title = document.getElementById("title");
   let note = document.getElementById("note");
-
-  // Aktualisieren Sie die aktuellen Notizdaten
   notesTitle[currentIndex] = title.value;
   writingsNotes[currentIndex] = note.value;
 
-  // Setzen Sie den Hinzufügen-Button auf den ursprünglichen Zustand zurück
   let addButton = document.getElementById("btnNote");
   addButton.innerText = "+";
   addButton.onclick = addNotes;
 
-  // Leeren Sie die Eingabefelder
   title.value = "";
   note.value = "";
-
-  // Aktualisieren und speichern Sie die Änderungen
   render();
   save();
 }
@@ -111,7 +106,7 @@ function renderRemovedNotes() {
 }
 
 /**
- *
+ * Recover the note from the Trash.
  * @param {Currently index of recover notes}} i
  */
 function recoverNotes(i) {
@@ -123,8 +118,9 @@ function recoverNotes(i) {
   save();
   renderRemovedNotes();
 }
+
 /**
- *
+ * Move the note to the trash.
  * @param {Currently index of remove notes}} i
  */
 function removedNotes(i) {
@@ -150,7 +146,7 @@ function addNotes() {
 }
 
 /**
- *
+ * Permanently delete the note.
  * @param {Currently index of delete notes} i
  */
 function deleteNotes(i) {
