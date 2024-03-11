@@ -5,6 +5,45 @@ let writingsNotes = [];
 let removedNotesTitle = [];
 let removedWritingsNotes = [];
 
+let currentIndex = -1; // Variable, um den Index der zu bearbeitenden Notiz zu verfolgen
+
+function editNotes(i) {
+  currentIndex = i;
+  let title = document.getElementById("title");
+  let note = document.getElementById("note");
+
+  // Füllen Sie die Eingabefelder mit den aktuellen Notizdaten
+  title.value = notesTitle[i];
+  note.value = writingsNotes[i];
+
+  // Ändern Sie den Hinzufügen-Button in einen Aktualisieren-Button
+  let addButton = document.getElementById("btnNote");
+  addButton.innerText = "Update";
+  addButton.onclick = updateNotes;
+}
+
+function updateNotes() {
+  let title = document.getElementById("title");
+  let note = document.getElementById("note");
+
+  // Aktualisieren Sie die aktuellen Notizdaten
+  notesTitle[currentIndex] = title.value;
+  writingsNotes[currentIndex] = note.value;
+
+  // Setzen Sie den Hinzufügen-Button auf den ursprünglichen Zustand zurück
+  let addButton = document.getElementById("btnNote");
+  addButton.innerText = "+";
+  addButton.onclick = addNotes;
+
+  // Leeren Sie die Eingabefelder
+  title.value = "";
+  note.value = "";
+
+  // Aktualisieren und speichern Sie die Änderungen
+  render();
+  save();
+}
+
 /**
  * Load storage in to array.
  * Render notes content.
@@ -27,14 +66,15 @@ function render() {
     const note = writingsNotes[i];
 
     content.innerHTML += /*html*/ `
-            <div class="card">
-                <div class="title-notes">
-                    <b>${titel}</b>  <br><br>
-                </div>
-                
-                <div> ${note} </div><br>
-                <button class="deleteButton" onclick="deleteNotes(${i})">-</button>
-            </div>
+    <div class="card">
+    <div class="titleNotes">
+        <b>${titel}</b>  <br><br>
+    </div>
+    <div>${note}</div><br>
+    <button class="editButton" onclick="editNotes(${i})">Edit</button>
+    <button class="deleteButton" onclick="deleteNotes(${i})">Delete</button>
+</div>
+
         `;
   }
 }
@@ -52,7 +92,7 @@ function renderRemovedNotes() {
 
     content.innerHTML += /*html*/ `
             <div class="cardInBasket">
-                <div class="title-notes">
+                <div class="titleNotes">
                     <b>${titel}</b> <br><br>
                 </div>
                 
@@ -171,8 +211,8 @@ function loadDeleteFiles() {
 function showInputBox() {
   let input = document.getElementById("note");
   let button = document.getElementById("btnNote");
-  input.classList.remove("d-none");
-  button.classList.remove("d-none");
+  input.classList.remove("dNone");
+  button.classList.remove("dNone");
 }
 
 /**
@@ -181,8 +221,8 @@ function showInputBox() {
 function binArea() {
   let content = document.getElementById("content");
   let removedContent = document.getElementById("removedContent");
-  content.classList.add("d-none");
-  removedContent.classList.remove("d-none");
+  content.classList.add("dNone");
+  removedContent.classList.remove("dNone");
   renderRemovedNotes();
 }
 
@@ -192,7 +232,7 @@ function binArea() {
 function backToNotes() {
   let content = document.getElementById("content");
   let removedContent = document.getElementById("removedContent");
-  content.classList.remove("d-none");
-  removedContent.classList.add("d-none");
+  content.classList.remove("dNone");
+  removedContent.classList.add("dNone");
   render();
 }

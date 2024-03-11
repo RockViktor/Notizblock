@@ -14,67 +14,68 @@
   </head>
 
   <body onload="init()">
-    <header class="nav-bar">
-      <div class="header-section-left">
-        <a href="index.html" class="part-left">
+    <header class="navBar">
+      <div>
+        <!-- <div class="headerSectionLeft"> -->
+        <a href="index.html" class="partLeft">
           <img
             src="./img/burgerMenüNew.png"
-            class="burger-menu"
+            class="burgerMenu"
             alt="mobile-menu"
           />
-          <img src="./img/Notes.png" class="keep-logo" alt="keep-logo" />Save
+          <img src="./img/Notes.png" class="keepLogo" alt="keepLogo" />Save
         </a>
       </div>
 
-      <div class="cont-for-input">
-        <button class="button-search" aria-label="Search" role="button">
-          <img class="magn-glass" src="./img/Lupe.png" alt="Lupe" />
+      <div class="contForInput">
+        <button class="buttonSearch" aria-label="Search" role="button">
+          <img class="magnGlass" src="./img/Lupe.png" alt="Lupe" />
         </button>
-        <input class="input-search" type="text" placeholder="Search" />
+        <input class="inputSearch" type="text" placeholder="Search" />
       </div>
     </header>
 
     <section class="headline">
-      <h1 class="your-notes">Your Notes</h1>
+      <h1 class="yourNotes">Your Notes</h1>
 
-      <form class="cont-add-note" onsubmit="addNotes()">
+      <form class="contAddNote" onsubmit="addNotes()">
         <input
           required
           onclick="showInputBox()"
-          class="input-titel"
+          class="inputTitel"
           id="title"
           type="text"
           placeholder="Title"
         />
         <textarea
           required
-          class="input-Note d-none"
+          class="inputNote dNone"
           id="note"
           type="text"
           placeholder="Take a note"
           cols="30"
           rows="4"
         ></textarea>
-        <button class="button-add-note d-none" id="btnNote">+</button>
+        <button class="buttonAddNote dNone" id="btnNote">+</button>
       </form>
     </section>
 
     <div class="content" id="content"></div>
 
-    <div id="removedContent" class="d-none content"></div>
+    <div id="removedContent" class="dNone content"></div>
 
-    <div onclick="binArea()" class="part-vor-bin">
+    <div onclick="binArea()" class="partForBin">
       <img
         src="./img/red-trash-can-icon.svg"
-        class="trash-bin-outline"
-        alt="mobile-menu"
+        class="trashBinOutline"
+        alt="mobileNenu"
       />
     </div>
     <div onclick="backToNotes()" class="backNotes">
       <img
         src="./img/invention-icon.svg"
-        class="trash-bin-outline"
-        alt="mobile-menu"
+        class="trashBinOutline"
+        alt="mobileMenu"
       />
     </div>
   </body>
