@@ -13,7 +13,6 @@ body {
   min-width: 360px;
   overflow-x: hidden;
   overflow-y: auto;
-
 }
 
 header {
@@ -124,8 +123,8 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
-
 
 .cardInBasket {
   color: #5f6368;
@@ -140,6 +139,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 
 .btnBox {
@@ -158,12 +158,22 @@ header {
   filter: drop-shadow(-10px 11px 2px gray);
 }
 
-.content {
+/* .content {
   margin: 55px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+} */
+
+.content {
+  border: 1px double red;
+  margin: 1.5rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  align-items: flex-start; /* Setzen Sie align-items auf flex-start, um die Karten auf der oberen Seite auszurichten */
 }
 
 .inputTitel {
@@ -194,7 +204,6 @@ header {
 }
 
 .deleteButton {
-  margin-top: 16px;
   border: 0px;
   border-radius: 50%;
   cursor: pointer;
@@ -325,8 +334,7 @@ textarea {
   display: none;
 }
 
-@media (max-width:768px) {
-
+@media (max-width: 768px) {
   .inputSearch {
     width: 328px;
   }
@@ -337,7 +345,7 @@ textarea {
   }
 }
 
-@media (max-width:576px) {
+@media (max-width: 576px) {
   .inputSearch {
     width: 328px;
   }
@@ -348,7 +356,7 @@ textarea {
   }
 }
 
-@media (max-width:550px) {
+@media (max-width: 550px) {
   .inputSearch {
     width: 248px;
   }
@@ -359,7 +367,7 @@ textarea {
   }
 }
 
-@media (max-width:456px) {
+@media (max-width: 456px) {
   .inputSearch {
     width: 208px;
   }
@@ -391,7 +399,6 @@ textarea {
 }
 
 @media (max-width: 340px) {
-
   .contAddNote {
     width: 160px;
     margin-left: 0px;
@@ -406,4 +413,26 @@ textarea {
     width: 160px;
     margin-left: 0;
   }
+}
+
+.btnBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.editButton {
+  border: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: -4px 4px 3px 0px rgb(0 0 0 / 14%);
+  width: 24px;
+  height: 24px;
+  color: black;
+}
+
+.editButton:active {
+  box-shadow: inset -4px 4px 2px 0 rgb(0 0 0 / 14%);
 }

@@ -8,18 +8,20 @@ let removedWritingsNotes = [];
 let currentIndex = -1; // Variable, um den Index der zu bearbeitenden Notiz zu verfolgen
 
 function editNotes(i) {
-  currentIndex = i;
+  currentIndex = i; // Setzen Sie den Index der zu bearbeitenden Notiz
   let title = document.getElementById("title");
   let note = document.getElementById("note");
 
-  // Füllen Sie die Eingabefelder mit den aktuellen Notizdaten
+  // Füllen Sie die Eingabefelder mit den aktuellen Notizdaten der ausgewählten Karte
   title.value = notesTitle[i];
   note.value = writingsNotes[i];
 
   // Ändern Sie den Hinzufügen-Button in einen Aktualisieren-Button
   let addButton = document.getElementById("btnNote");
   addButton.innerText = "Update";
-  addButton.onclick = updateNotes;
+  addButton.onclick = function () {
+    updateNotes();
+  };
 }
 
 function updateNotes() {
@@ -55,7 +57,7 @@ async function init() {
 }
 
 /**
- *  Render notes content.
+ * Render notes content.
  */
 function render() {
   let content = document.getElementById("content");
@@ -67,15 +69,18 @@ function render() {
 
     content.innerHTML += /*html*/ `
     <div class="card">
-    <div class="titleNotes">
-        <b>${titel}</b>  <br><br>
+      <div class="titelNoteBox">
+      <div class="titleNotes">
+        <b>${titel}</b>
+      </div>
+      <div>${note}</div>
+      </div>
+      <div class="btnBox">
+        <button class="deleteButton" onclick="deleteNotes(${i})">-</button>
+        <button class="editButton" onclick="editNotes(${i})">*</button>
+      </div>
     </div>
-    <div>${note}</div><br>
-    <button class="editButton" onclick="editNotes(${i})">Edit</button>
-    <button class="deleteButton" onclick="deleteNotes(${i})">Delete</button>
-</div>
-
-        `;
+    `;
   }
 }
 
@@ -91,21 +96,20 @@ function renderRemovedNotes() {
     const note = removedWritingsNotes[i];
 
     content.innerHTML += /*html*/ `
-            <div class="cardInBasket">
-                <div class="titleNotes">
-                    <b>${titel}</b> <br><br>
-                </div>
-                
-                <div>${note}</div>
-                <div class="btnBox">
-                <button class="removedButton" onclick="removedNotes(${i})">-</button>
-                <button class="recoverButton" onclick="recoverNotes(${i})">+</button>
-                </div>
-                
-            </div>
-        `;
+    <div class="cardInBasket">
+      <div class="titelNoteBox">
+        <div class="titleNotes"><b>${titel}</b></div>
+        <div>${note}</div>
+      </div>
+      <div class="btnBox">
+        <button class="removedButton" onclick="removedNotes(${i})">-</button>
+        <button class="recoverButton" onclick="recoverNotes(${i})">+</button>
+      </div>
+    </div>
+    `;
   }
 }
+
 /**
  *
  * @param {Currently index of recover notes}} i
@@ -160,7 +164,7 @@ function deleteNotes(i) {
 }
 
 /**
- *  Save delete notes in to storage.
+ * Save delete notes in to storage.
  */
 function saveDelete() {
   let removedNotesTitleAsText = JSON.stringify(removedNotesTitle);
@@ -171,7 +175,7 @@ function saveDelete() {
 }
 
 /**
- *  Save notes in to storage.
+ * Save notes in to storage.
  */
 function save() {
   let notesTitleAsText = JSON.stringify(notesTitle);
