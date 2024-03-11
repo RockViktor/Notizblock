@@ -2,14 +2,12 @@ let notesTitle = [];
 let writingsNotes = [];
 let removedNotesTitle = [];
 let removedWritingsNotes = [];
-let currentIndex = -1;
 
 /**
  * The note that the user wants to change.
  * @param {Currently note} i
  */
 function editNotes(i) {
-  currentIndex = i;
   let title = document.getElementById("title");
   let note = document.getElementById("note");
   title.value = notesTitle[i];
@@ -18,7 +16,7 @@ function editNotes(i) {
   let addButton = document.getElementById("btnNote");
   addButton.innerText = "+";
   addButton.onclick = function () {
-    updateNotes();
+    updateNotes(i);
   };
 }
 
@@ -28,8 +26,8 @@ function editNotes(i) {
 function updateNotes() {
   let title = document.getElementById("title");
   let note = document.getElementById("note");
-  notesTitle[currentIndex] = title.value;
-  writingsNotes[currentIndex] = note.value;
+  notesTitle[i] = title.value;
+  writingsNotes[i] = note.value;
 
   let addButton = document.getElementById("btnNote");
   addButton.innerText = "+";
