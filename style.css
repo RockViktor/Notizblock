@@ -1,3 +1,5 @@
+@import url("./css/footer.css");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -173,7 +175,8 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  align-items: flex-start; /* Setzen Sie align-items auf flex-start, um die Karten auf der oberen Seite auszurichten */
+  align-items: flex-start;
+  /* Setzen Sie align-items auf flex-start, um die Karten auf der oberen Seite auszurichten */
 }
 
 .inputTitel {

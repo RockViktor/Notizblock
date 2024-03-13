@@ -44,6 +44,7 @@ function updateNotes() {
  * Render notes content.
  */
 async function init() {
+  await includeHTML();
   await load();
   await loadDeleteFiles();
   render();
