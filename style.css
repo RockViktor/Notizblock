@@ -15,6 +15,10 @@ body {
   min-width: 360px;
   overflow-x: hidden;
   overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
 }
 
 header {
@@ -22,6 +26,25 @@ header {
   gap: 1rem;
   width: 100%;
   height: 4.5rem;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: orange;
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid orange;
+  /* creates padding around scroll thumb */
 }
 
 .navBar {
@@ -160,16 +183,7 @@ header {
   filter: drop-shadow(-10px 11px 2px gray);
 }
 
-/* .content {
-  margin: 55px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-} */
-
 .content {
-  border: 1px double red;
   margin: 1.5rem 2rem 1.5rem 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -313,7 +327,7 @@ textarea {
   background-color: #f1f3f4;
   cursor: pointer;
   position: absolute;
-  top: 6rem;
+  top: 5.54rem;
   box-shadow: -11px 8px 8px 2px rgb(0 0 0 / 36%);
   border: 1px solid #00000045;
 }
@@ -328,7 +342,7 @@ textarea {
   background-color: #f1f3f4;
   cursor: pointer;
   position: absolute;
-  top: 10rem;
+  top: 9rem;
   box-shadow: -11px 8px 8px 2px rgb(0 0 0 / 36%);
   border: 1px solid #00000045;
 }
@@ -347,6 +361,8 @@ textarea {
     margin-left: 72px;
   }
 }
+
+@media (max-width: 620px) {}
 
 @media (max-width: 576px) {
   .inputSearch {

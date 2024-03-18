@@ -7,20 +7,22 @@
     padding-left: 160px;
     padding-top: 32px;
     padding-bottom: 32px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
 }
 
 .footer-logo {
-    filter: invert(1);
-    height: 100px;
+    height: 32px;
     justify-content: center;
 }
 
 .footer-logo:hover {
-    filter: drop-shadow(4px 4px 4px #dfe4df);
+    filter: invert(1) drop-shadow(4px 4px 4px #dfe4df);
 }
 
 .footer-icon {
-    height: 32px;
+    height: 16px;
     padding-left: 8px;
 }
 
@@ -36,7 +38,7 @@
 
 .footer-links a:hover {
     text-decoration: underline;
-    color: #008001;
+    filter: invert(1) drop-shadow(4px 4px 4px #dfe4df);
 }
 
 .footer-links {
@@ -48,4 +50,54 @@
     height: 100px;
     width: 2px;
     background-color: white;
+}
+
+@media (max-width:456px) {
+    .second-container img {
+        width: 250px;
+    }
+
+    .second-container-text {
+        padding: 0;
+    }
+
+    .footer {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .footer-logo {
+        height: 32px;
+        padding-right: 8px;
+    }
+
+    .footer-links {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .footer-icon {
+        height: 24px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .second-container-p {
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .sended-email-popup {
+        margin: 8px;
+    }
+
 }
