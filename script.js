@@ -89,18 +89,7 @@ function renderRemovedNotes() {
     const titel = removedNotesTitle[i];
     const note = removedWritingsNotes[i];
 
-    content.innerHTML += /*html*/ `
-    <div class="cardInBasket">
-      <div class="titelNoteBox">
-        <div class="titleNotes"><b>${titel}</b></div>
-        <div>${note}</div>
-      </div>
-      <div class="btnBox">
-        <button class="removedButton" onclick="removedNotes(${i})">-</button>
-        <button class="recoverButton" onclick="recoverNotes(${i})">+</button>
-      </div>
-    </div>
-    `;
+    content.innerHTML += renderRemovedNotesHTML(i, titel, note);
   }
 }
 

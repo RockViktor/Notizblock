@@ -15,7 +15,6 @@ body {
   min-width: 360px;
   overflow-x: hidden;
   overflow-y: auto;
-
   display: flex;
   flex-direction: column;
   height: 100dvh;
@@ -30,21 +29,16 @@ header {
 
 body::-webkit-scrollbar {
   width: 12px;
-  /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
   background: orange;
-  /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
   background-color: blue;
-  /* color of the scroll thumb */
   border-radius: 20px;
-  /* roundness of the scroll thumb */
   border: 3px solid orange;
-  /* creates padding around scroll thumb */
 }
 
 .navBar {
@@ -190,7 +184,6 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   gap: 1rem;
   align-items: flex-start;
-  /* Setzen Sie align-items auf flex-start, um die Karten auf der oberen Seite auszurichten */
 }
 
 .inputTitel {
@@ -284,33 +277,21 @@ body::-webkit-scrollbar-thumb {
 input:focus {
   box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 10%);
   outline: none;
-  /* Entfernt die Standard-Klick-Kontur (outline) */
   border-radius: 8px;
-  /* Setzt den border-radius auf "0" beim Klicken */
-  /* Weitere gewünschte Stile für den Fokus-Zustand können hier hinzugefügt werden */
   background-color: white;
 }
 
 textarea:focus {
-  /* box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 10%); Anstatt org. Borderline, eigene Umrandung */
   outline: none;
-  /* Borderline ausmachen */
-  /* Entfernt die Standard-Klick-Kontur (outline) */
   border-radius: 8px;
-  /* Setzt den border-radius auf 0 beim Klicken */
-  /* Weitere gewünschte Stile für den Fokus-Zustand können hier hinzugefügt werden */
   background-color: white;
 }
 
 textarea {
   width: 100%;
-  /* Das Textarea-Feld nimmt die volle Breite des Containers ein */
   box-sizing: border-box;
-  /* Berücksichtigt Padding und Border in der Gesamtbreite */
   overflow-y: hidden;
-  /* Verhindert das Scrollen im Textfeld */
   resize: none;
-  /* Deaktiviert das manuelle Ändern der Größe durch den Benutzer */
 }
 
 .titleNotes {
@@ -361,8 +342,6 @@ textarea {
     margin-left: 72px;
   }
 }
-
-@media (max-width: 620px) {}
 
 @media (max-width: 576px) {
   .inputSearch {

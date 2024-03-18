@@ -1,12 +1,8 @@
 .footer {
     background-color: #403b3b;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding-right: 160px;
-    padding-left: 160px;
-    padding-top: 32px;
-    padding-bottom: 32px;
     bottom: 0;
     width: 100%;
     position: fixed;
@@ -44,22 +40,17 @@
 .footer-links {
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 12px;
 }
 
 .line {
-    height: 100px;
+    height: 50px;
     width: 2px;
     background-color: white;
 }
 
 @media (max-width:456px) {
-    .second-container img {
-        width: 250px;
-    }
-
-    .second-container-text {
-        padding: 0;
-    }
 
     .footer {
         padding-left: 8px;
@@ -75,29 +66,4 @@
         padding-left: 8px;
         padding-right: 8px;
     }
-
-    .footer-icon {
-        height: 24px;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
-
-    h2 {
-        font-size: 16px;
-    }
-
-    .second-container-p {
-        font-size: 12px;
-    }
-
-    p {
-        font-size: 12px;
-    }
-
-    .sended-email-popup {
-        margin: 8px;
-    }
-
 }
