@@ -68,7 +68,7 @@
 }
 
 .overlay-menu a:hover {
-    color: #008001;
+    color: orange;
     text-decoration: underline;
 }
 
@@ -80,7 +80,7 @@
     position: absolute;
     top: 16px;
     right: 16px;
-    background-color: #008001;
+    background-color: orange;
     color: white;
     border: 0;
     padding: 4px 8px;
@@ -88,5 +88,5 @@
 }
 
 .close-button:hover {
-    background-color: #10ca10;
+    background-color: orange;
 }
