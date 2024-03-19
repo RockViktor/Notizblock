@@ -6,10 +6,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-    <script src="includeHTML.js"></script>
+    <script src="./includeHTML.js"></script>
+    <script src="./js/datenschutz.js"></script>
+    <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="img/logo_small.ico" type="image/x-icon" />
   </head>
-  <body onload="includeHTML()">
+  <body onload="initImpressum()">
     <div w3-include-html="templates/header.html"></div>
     <div class="impressum">
       <h4>Impressum</h4>
@@ -58,6 +60,6 @@
 
       <p>Quelle: <a href="https://www.e-recht24.de">eRecht24</a></p>
     </div>
-    <div w3-include-html="templates/footer.html"></div>
+    <footer class="footer" w3-include-html="./templates/footer.html"></footer>
   </body>
 </html>
