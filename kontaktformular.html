@@ -8,9 +8,10 @@
     <title>Kontaktformular</title>
     <script src="script.js"></script>
     <script src="includeHTML.js"></script>
+    <script src="./js/kontaktformular.js"></script>
   </head>
 
-  <body onload="includeHTML()">
+  <body onload="initKontaktformular()">
     <header w3-include-html="templates/header.html"></header>
 
     <form onsubmit="sendMail(event)">
@@ -65,6 +66,6 @@
       </div>
     </form>
 
-    <footer w3-include-html="templates/footer.html"></footer>
+    <footer class="footer" w3-include-html="./templates/footer.html"></footer>
   </body>
 </html>
