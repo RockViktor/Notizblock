@@ -12,3 +12,21 @@ function renderRemovedNotesHTML(i, titel, note) {
     </div>
     `;
 }
+
+function renderNotesHTML(titel, note, i) {
+  return `
+  <div class="card">
+    <div class="titelNoteBox">
+    <div class="titleNotes">
+      <b>${titel}</b>
+    </div>
+    <div>${note}</div>
+    </div>
+    <div class="btnBox">
+      <button class="deleteButton" onclick="deleteNotes(${i})">-</button>
+      <img class="editButton gear" onclick="editNotes(${i})" src="./img/default-icon.png">
+      
+    </div>
+  </div>
+  `;
+}

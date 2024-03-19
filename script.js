@@ -35,7 +35,7 @@ function updateNotes() {
 
   title.value = "";
   note.value = "";
-  render();
+  renderNotes();
   save();
 }
 
@@ -47,13 +47,13 @@ async function init() {
   await includeHTML();
   await load();
   await loadDeleteFiles();
-  render();
+  renderNotes();
 }
 
 /**
  * Render notes content.
  */
-function render() {
+function renderNotes() {
   let content = document.getElementById("content");
   content.innerHTML = "";
 
@@ -61,20 +61,7 @@ function render() {
     const titel = notesTitle[i];
     const note = writingsNotes[i];
 
-    content.innerHTML += /*html*/ `
-    <div class="card">
-      <div class="titelNoteBox">
-      <div class="titleNotes">
-        <b>${titel}</b>
-      </div>
-      <div>${note}</div>
-      </div>
-      <div class="btnBox">
-        <button class="deleteButton" onclick="deleteNotes(${i})">-</button>
-        <button class="editButton" onclick="editNotes(${i})">*</button>
-      </div>
-    </div>
-    `;
+    content.innerHTML += renderNotesHTML(titel, note, i);
   }
 }
 
@@ -129,7 +116,7 @@ function addNotes() {
   writingsNotes.push(note.value);
   document.getElementById("title").value = "";
   document.getElementById("note").value = "";
-  render();
+  renderNotes();
   save();
 }
 
@@ -144,7 +131,7 @@ function deleteNotes(i) {
   writingsNotes.splice(i, 1);
   saveDelete();
   save();
-  render();
+  renderNotes();
 }
 
 /**
@@ -222,5 +209,5 @@ function backToNotes() {
   let removedContent = document.getElementById("removedContent");
   content.classList.remove("dNone");
   removedContent.classList.add("dNone");
-  render();
+  renderNotes();
 }
