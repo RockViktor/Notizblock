@@ -16,69 +16,71 @@
   </head>
 
   <body onload="init()">
-    <header class="navBar">
-      <div>
-        <a href="index.html" class="partLeft">
-          <img
-            src="./img/burgerMenüNew.png"
-            class="burgerMenu"
-            alt="mobile-menu"
+    <div class="mainDiv">
+      <header class="navBar">
+        <div style="max-width: 1440px">
+          <a href="index.html" class="partLeft">
+            <img
+              src="./img/burgerMenüNew.png"
+              class="burgerMenu"
+              alt="mobile-menu"
+            />
+            <img src="./img/Notes.png" class="keepLogo" alt="keepLogo" />Save
+          </a>
+        </div>
+
+        <div class="contForInput">
+          <button class="buttonSearch" aria-label="Search" role="button">
+            <img class="magnGlass" src="./img/Lupe.png" alt="Lupe" />
+          </button>
+          <input class="inputSearch" type="text" placeholder="Search" />
+        </div>
+      </header>
+
+      <section class="headline">
+        <h1 class="yourNotes">Your Notes</h1>
+
+        <form class="contAddNote" onsubmit="addNotes()">
+          <input
+            required
+            onclick="showInputBox()"
+            class="inputTitel"
+            id="title"
+            type="text"
+            placeholder="Title"
           />
-          <img src="./img/Notes.png" class="keepLogo" alt="keepLogo" />Save
-        </a>
-      </div>
+          <textarea
+            required
+            class="inputNote dNone"
+            id="note"
+            type="text"
+            placeholder="Take a note"
+            cols="30"
+            rows="4"
+          ></textarea>
+          <button class="buttonAddNote dNone" id="btnNote">+</button>
+        </form>
+      </section>
 
-      <div class="contForInput">
-        <button class="buttonSearch" aria-label="Search" role="button">
-          <img class="magnGlass" src="./img/Lupe.png" alt="Lupe" />
-        </button>
-        <input class="inputSearch" type="text" placeholder="Search" />
-      </div>
-    </header>
+      <div class="content" id="content"></div>
 
-    <section class="headline">
-      <h1 class="yourNotes">Your Notes</h1>
+      <div id="removedContent" class="dNone content"></div>
 
-      <form class="contAddNote" onsubmit="addNotes()">
-        <input
-          required
-          onclick="showInputBox()"
-          class="inputTitel"
-          id="title"
-          type="text"
-          placeholder="Title"
+      <div onclick="binArea()" class="partForBin">
+        <img
+          src="./img/red-trash-can-icon.svg"
+          class="trashBinOutline"
+          alt="mobileNenu"
         />
-        <textarea
-          required
-          class="inputNote dNone"
-          id="note"
-          type="text"
-          placeholder="Take a note"
-          cols="30"
-          rows="4"
-        ></textarea>
-        <button class="buttonAddNote dNone" id="btnNote">+</button>
-      </form>
-    </section>
-
-    <div class="content" id="content"></div>
-
-    <div id="removedContent" class="dNone content"></div>
-
-    <div onclick="binArea()" class="partForBin">
-      <img
-        src="./img/red-trash-can-icon.svg"
-        class="trashBinOutline"
-        alt="mobileNenu"
-      />
+      </div>
+      <div onclick="backToNotes()" class="backNotes">
+        <img
+          src="./img/invention-icon.svg"
+          class="trashBinOutline"
+          alt="mobileMenu"
+        />
+      </div>
+      <footer class="footer" w3-include-html="./templates/footer.html"></footer>
     </div>
-    <div onclick="backToNotes()" class="backNotes">
-      <img
-        src="./img/invention-icon.svg"
-        class="trashBinOutline"
-        alt="mobileMenu"
-      />
-    </div>
-    <footer class="footer" w3-include-html="./templates/footer.html"></footer>
   </body>
 </html>
