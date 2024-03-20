@@ -21,6 +21,9 @@ p {
         height: 100dvh;
     }
 
+    p {
+        font-size: 12px;
+    }
 
     .impressum {
         padding: 8px;
@@ -45,7 +48,33 @@ p {
 
 /* Desktop version */
 @media only screen and (max-width: 1440px) and (min-width: 721px) {
+
+    body {
+        align-items: center;
+        height: 100dvh;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
     .impressum {
-        padding: 56px 96px;
+        padding: 8px 96px;
+        font-size: 12px;
+        margin-top: 24px;
+        margin-bottom: 5rem;
+        max-width: 720px;
+    }
+
+    h4 {
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    h5 {
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 25px;
+        margin-top: 83px;
     }
 }

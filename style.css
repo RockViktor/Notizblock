@@ -21,7 +21,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100dvh;
-  /* align-items: center; */
 }
 
 header {
