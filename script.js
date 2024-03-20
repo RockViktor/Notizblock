@@ -23,7 +23,7 @@ function editNotes(i) {
 /**
  * Save the note you want to change.
  */
-function updateNotes() {
+function updateNotes(i) {
   let title = document.getElementById("title");
   let note = document.getElementById("note");
   notesTitle[i] = title.value;
