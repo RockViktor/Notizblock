@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./../css/impressum.css" />
     <link rel="stylesheet" href="./../css/footer.css" />
 
-    <script src="../script.js"></script>
+    <script src="./../script.js"></script>
     <script src="./../includeHTML.js"></script>
     <script src="./../js/impressum.js"></script>
 
@@ -15,6 +15,7 @@
 
     <title>Impressum</title>
   </head>
+
   <body onload="initImpressum()">
     <div class="impressum">
       <h4>Impressum</h4>
@@ -60,6 +61,9 @@
 
       <p>Quelle: <a href="https://www.e-recht24.de">eRecht24</a></p>
     </div>
-    <footer class="footer" w3-include-html="./templates/footer.html"></footer>
+    <footer
+      class="footer"
+      w3-include-html="./../templates/footer.html"
+    ></footer>
   </body>
 </html>

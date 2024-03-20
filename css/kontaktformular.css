@@ -1,4 +1,8 @@
-/* Style contact form*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 .contact-form {
     display: flex;
