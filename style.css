@@ -345,70 +345,6 @@ textarea {
   display: none;
 }
 
-@media only screen and (max-width: 3333px) and (min-width: 577px) {
-  .inputSearch {
-    width: 328px;
-  }
-
-  .contAddNote {
-    width: 440px;
-    margin-left: 72px;
-  }
-}
-
-@media only screen and (max-width:576px) and (min-width: 551px) {
-  .inputSearch {
-    width: 328px;
-  }
-
-  .contAddNote {
-    width: 440px;
-    margin-left: 72px;
-  }
-}
-
-@media only screen and (max-width: 550px) and (min-width: 457px) {
-  .inputSearch {
-    width: 248px;
-  }
-
-  .contAddNote {
-    width: 320px;
-    margin-left: 72px;
-  }
-}
-
-@media only screen and (max-width: 456px) and (min-width: 451px) {
-  .inputSearch {
-    width: 208px;
-  }
-}
-
-@media only screen and (max-width: 450px) and (min-width: 341px) {
-  .inputSearch {
-    display: none;
-  }
-
-  .buttonSearch {
-    display: none;
-  }
-
-  .contAddNote {
-    width: 224px;
-    margin-left: 56px;
-  }
-
-  .card {
-    width: 224px;
-    margin-left: 56px;
-  }
-
-  .cardInBasket {
-    width: 224px;
-    margin-left: 56px;
-  }
-}
-
 @media only screen and (max-width: 340px) and (min-width: 300px) {
   .contAddNote {
     width: 160px;
@@ -456,5 +392,73 @@ textarea {
 
   .backNotes {
     width: 56px;
+  }
+
+  .inputSearch {
+    width: 106px;
+  }
+}
+
+@media only screen and (max-width: 450px) and (min-width: 341px) {
+  .buttonSearch {
+    display: none;
+  }
+
+  .contAddNote {
+    width: 224px;
+    margin-left: 56px;
+  }
+
+  .card {
+    width: 224px;
+    margin-left: 56px;
+  }
+
+  .cardInBasket {
+    width: 224px;
+    margin-left: 56px;
+  }
+
+  .inputSearch {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 456px) and (min-width: 451px) {
+  .inputSearch {
+    width: 208px;
+  }
+}
+
+@media only screen and (max-width: 550px) and (min-width: 457px) {
+  .inputSearch {
+    width: 248px;
+  }
+
+  .contAddNote {
+    width: 320px;
+    margin-left: 72px;
+  }
+}
+
+@media only screen and (max-width:576px) and (min-width: 551px) {
+  .inputSearch {
+    width: 328px;
+  }
+
+  .contAddNote {
+    width: 440px;
+    margin-left: 72px;
+  }
+}
+
+@media only screen and (max-width: 3333px) and (min-width: 577px) {
+  .inputSearch {
+    width: 210%;
+  }
+
+  .contAddNote {
+    width: 440px;
+    margin-left: 72px;
   }
 }

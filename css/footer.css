@@ -50,20 +50,17 @@
     background-color: white;
 }
 
-@media (max-width:456px) {
+.footer {
+    padding-left: 8px;
+    padding-right: 8px;
+}
 
-    .footer {
-        padding-left: 8px;
-        padding-right: 8px;
-    }
+.footer-logo {
+    height: 32px;
+    padding-right: 8px;
+}
 
-    .footer-logo {
-        height: 32px;
-        padding-right: 8px;
-    }
-
-    .footer-links {
-        padding-left: 8px;
-        padding-right: 8px;
-    }
+.footer-links {
+    padding-left: 8px;
+    padding-right: 8px;
 }
