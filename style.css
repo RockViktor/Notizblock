@@ -15,7 +15,6 @@ body {
   direction: ltr;
   font-family: "Roboto", arial, sans-serif;
   font-size: 15px;
-  min-width: 360px;
   overflow-x: hidden;
   overflow-y: auto;
   display: flex;
@@ -321,7 +320,7 @@ textarea {
   cursor: pointer;
   position: absolute;
   top: 5.54rem;
-  left: 1rem;
+  left: 0;
   box-shadow: -11px 8px 8px 2px rgb(0 0 0 / 36%);
   border: 1px solid #00000045;
 }
@@ -337,7 +336,7 @@ textarea {
   cursor: pointer;
   position: absolute;
   top: 9rem;
-  left: 1rem;
+  left: 0;
   box-shadow: -11px 8px 8px 2px rgb(0 0 0 / 36%);
   border: 1px solid #00000045;
 }
@@ -425,29 +424,37 @@ textarea {
     width: 160px;
     margin-left: 0;
   }
-}
 
-.btnBox {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 1rem;
-  gap: 1rem;
-}
+  .btnBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
 
-.editButton {
-  border: 0px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: -4px 4px 3px 0px rgb(0 0 0 / 14%);
-  width: 24px;
-  height: 24px;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .editButton {
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: -4px 4px 3px 0px rgb(0 0 0 / 14%);
+    width: 24px;
+    height: 24px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.editButton:active {
-  box-shadow: inset -4px 4px 2px 0 rgb(0 0 0 / 14%);
+  .editButton:active {
+    box-shadow: inset -4px 4px 2px 0 rgb(0 0 0 / 14%);
+  }
+
+  .partForBin {
+    width: 56px;
+  }
+
+  .backNotes {
+    width: 56px;
+  }
 }
