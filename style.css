@@ -345,7 +345,7 @@ textarea {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 3333px) and (min-width: 577px) {
   .inputSearch {
     width: 328px;
   }
@@ -356,7 +356,7 @@ textarea {
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width:576px) and (min-width: 551px) {
   .inputSearch {
     width: 328px;
   }
@@ -367,7 +367,7 @@ textarea {
   }
 }
 
-@media (max-width: 550px) {
+@media only screen and (max-width: 550px) and (min-width: 457px) {
   .inputSearch {
     width: 248px;
   }
@@ -378,13 +378,13 @@ textarea {
   }
 }
 
-@media (max-width: 456px) {
+@media only screen and (max-width: 456px) and (min-width: 451px) {
   .inputSearch {
     width: 208px;
   }
 }
 
-@media (max-width: 450px) {
+@media only screen and (max-width: 450px) and (min-width: 341px) {
   .inputSearch {
     display: none;
   }
@@ -409,7 +409,7 @@ textarea {
   }
 }
 
-@media (max-width: 340px) {
+@media only screen and (max-width: 340px) and (min-width: 300px) {
   .contAddNote {
     width: 160px;
     margin-left: 0px;
