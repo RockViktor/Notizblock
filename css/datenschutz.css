@@ -8,12 +8,7 @@ p {
     padding-top: 0.8rem;
 }
 
-.datenschutz {
-    padding-top: 56px;
-    padding-bottom: 160px;
-    padding-left: 160px;
-    padding-right: 160px;
-}
+
 
 h4 {
     margin-top: 0;
@@ -27,6 +22,7 @@ h5 {
     margin-bottom: 0;
     font-weight: 600;
     font-size: 20px;
+    color: orange;
 }
 
 h6 {
@@ -46,14 +42,19 @@ h6 {
 }
 
 /* Mobile version */
-@media only screen and (max-width: 720px) and (min-width: 300px) {
+@media only screen and (max-width: 420px) and (min-width: 300px) {
     body {
         align-items: center;
         height: 100dvh;
     }
 
     p {
-        font-size: 12px;
+        font-size: 10px;
+    }
+
+    .datenschutz {
+        padding: 20px 20px 126px 20px;
+        width: 300px;
     }
 
     .impressum {
@@ -73,8 +74,7 @@ h6 {
         margin-bottom: 8px;
         font-weight: 600;
         font-size: 20px;
-        margin-top: 83px;
-        color: orange;
+        margin-top: 32px;
     }
 
     ul {
@@ -82,9 +82,8 @@ h6 {
     }
 }
 
-/* Desktop version */
-@media only screen and (max-width: 3333px) and (min-width: 721px) {
-
+/* Tablet version */
+@media only screen and (max-width: 720px) and (min-width: 421px) {
     body {
         align-items: center;
         height: 100dvh;
@@ -92,6 +91,10 @@ h6 {
 
     p {
         font-size: 16px;
+    }
+
+    .datenschutz {
+        padding: 20px 20px 126px 20px;
     }
 
     .impressum {
@@ -112,7 +115,48 @@ h6 {
         font-weight: 600;
         font-size: 25px;
         margin-top: 83px;
-        color: orange;
+    }
+
+    ul {
+        padding-left: 32px;
+    }
+}
+
+
+
+/* Desktop version */
+@media only screen and (max-width: 3333px) and (min-width: 721px) {
+    body {
+        align-items: center;
+        height: 100dvh;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .datenschutz {
+        padding: 40px 80px 126px 80px;
+    }
+
+    .impressum {
+        padding: 8px 96px;
+        font-size: 12px;
+        margin-top: 24px;
+        margin-bottom: 5rem;
+        max-width: 720px;
+    }
+
+    h4 {
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    h5 {
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 25px;
+        margin-top: 83px;
     }
 
     ul {
