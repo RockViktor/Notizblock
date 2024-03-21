@@ -36,6 +36,7 @@ p {
     h4 {
         font-weight: 600;
         font-size: 20px;
+        color: orange;
     }
 
     h5 {
@@ -43,11 +44,12 @@ p {
         font-weight: 600;
         font-size: 20px;
         margin-top: 83px;
+        color: orange;
     }
 }
 
 /* Desktop version */
-@media only screen and (max-width: 1440px) and (min-width: 721px) {
+@media only screen and (max-width: 3333px) and (min-width: 721px) {
 
     body {
         align-items: center;
@@ -69,6 +71,7 @@ p {
     h4 {
         font-weight: 600;
         font-size: 25px;
+        color: orange;
     }
 
     h5 {
@@ -76,5 +79,6 @@ p {
         font-weight: 600;
         font-size: 25px;
         margin-top: 83px;
+        color: orange;
     }
 }

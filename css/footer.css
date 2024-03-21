@@ -3,9 +3,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* bottom: 0; */
+    bottom: 0;
     width: 100%;
-    /* position: fixed; */
+    position: fixed;
 }
 
 .footer-logo {
