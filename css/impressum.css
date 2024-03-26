@@ -28,7 +28,7 @@ p {
     .impressum {
         padding: 8px;
         font-size: 12px;
-        margin-top: 24px;
+        margin-top: 20px;
         margin-bottom: 5rem;
         max-width: 720px;
     }
@@ -43,7 +43,7 @@ p {
         margin-bottom: 8px;
         font-weight: 600;
         font-size: 20px;
-        margin-top: 24px;
+        margin-top: 20px;
         color: orange;
     }
 }
