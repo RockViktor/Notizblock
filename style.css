@@ -130,7 +130,7 @@ body::-webkit-scrollbar-thumb {
   border: 1px solid #00000045;
   border-radius: 8px;
   padding: 8px 8px 8px 8px;
-  width: 560px;
+  /* width: 560px; */
 }
 
 .card {
@@ -345,10 +345,10 @@ textarea {
   display: none;
 }
 
-@media only screen and (max-width: 340px) and (min-width: 300px) {
+@media only screen and (max-width: 340px) and (min-width: 290px) {
   .contAddNote {
-    width: 160px;
-    margin-left: 0px;
+    width: 200px;
+    margin-left: 56px;
   }
 
   .card {
@@ -395,7 +395,7 @@ textarea {
   }
 
   .inputSearch {
-    width: 106px;
+    width: 130px;
   }
 }
 
@@ -430,6 +430,11 @@ textarea {
   }
 }
 
+.contAddNote {
+  width: 230px;
+  margin-left: 56px;
+}
+
 @media only screen and (max-width: 550px) and (min-width: 457px) {
   .inputSearch {
     width: 248px;
@@ -454,11 +459,11 @@ textarea {
 
 @media only screen and (max-width: 3333px) and (min-width: 577px) {
   .inputSearch {
-    width: 210%;
+    width: 150%;
   }
 
   .contAddNote {
-    width: 440px;
+
     margin-left: 72px;
   }
 }
