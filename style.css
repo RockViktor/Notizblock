@@ -79,7 +79,7 @@ body::-webkit-scrollbar-thumb {
   margin-left: 24px;
   margin-top: 16px;
   font-size: 22px;
-  color: #5f6368;
+  color: #484a4e;
   opacity: 1;
   filter: drop-shadow(-10px 11px 2px gray);
 }
@@ -180,6 +180,12 @@ body::-webkit-scrollbar-thumb {
 
 .yourNotes {
   color: #484a4e;
+  padding: 16px;
+  filter: drop-shadow(-10px 11px 2px gray);
+}
+
+.YourDeletedNotes {
+  color: red;
   padding: 16px;
   filter: drop-shadow(-10px 11px 2px gray);
 }
@@ -397,13 +403,13 @@ textarea {
   .inputSearch {
     width: 130px;
   }
+
+  .YourDeletedNotes {
+    font-size: 18px;
+  }
 }
 
 @media only screen and (max-width: 450px) and (min-width: 341px) {
-  .buttonSearch {
-    display: none;
-  }
-
   .contAddNote {
     width: 224px;
     margin-left: 56px;
@@ -431,7 +437,6 @@ textarea {
 }
 
 .contAddNote {
-  /* width: 230px; */
   margin-left: 56px;
 }
 
@@ -463,7 +468,7 @@ textarea {
   }
 
   .contAddNote {
-
+    width: 490px;
     margin-left: 72px;
   }
 }

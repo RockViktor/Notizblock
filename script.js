@@ -48,6 +48,7 @@ async function init() {
   await load();
   await loadDeleteFiles();
   renderNotes();
+  addKeyupListener();
 }
 
 /**
@@ -109,15 +110,23 @@ function removedNotes(i) {
  * Push currently notes in to array.
  */
 function addNotes() {
-  let title = document.getElementById("title");
-  let note = document.getElementById("note");
+  let title = document.getElementById("title").value.trim();
+  let note = document.getElementById("note").value.trim();
 
-  notesTitle.push(title.value);
-  writingsNotes.push(note.value);
-  document.getElementById("title").value = "";
-  document.getElementById("note").value = "";
-  renderNotes();
-  save();
+  if (title !== "" && note !== "") {
+    notesTitle.push(title);
+    writingsNotes.push(note);
+    document.getElementById("title").value = "";
+    document.getElementById("note").value = "";
+    renderNotes();
+    save();
+  } else {
+    alertFunction();
+  }
+}
+
+function alertFunction() {
+  document.getElementById("alertText").style.display = "block";
 }
 
 /**
@@ -198,7 +207,15 @@ function binArea() {
   let removedContent = document.getElementById("removedContent");
   content.classList.add("dNone");
   removedContent.classList.remove("dNone");
+  let yourNotes = document.getElementById("yourNotes");
+  yourNotes.innerHTML = "Your deleted notes";
+  colorBinArea(yourNotes);
   renderRemovedNotes();
+}
+
+function colorBinArea(yourNotes) {
+  yourNotes.classList.remove("yourNotes");
+  yourNotes.classList.add("YourDeletedNotes");
 }
 
 /**
@@ -209,5 +226,52 @@ function backToNotes() {
   let removedContent = document.getElementById("removedContent");
   content.classList.remove("dNone");
   removedContent.classList.add("dNone");
+  let yourNotes = document.getElementById("yourNotes");
+  yourNotes.innerHTML = "Your notes";
+  colorArea(yourNotes);
   renderNotes();
+}
+
+function colorArea(yourNotes) {
+  yourNotes.classList.remove("YourDeletedNotes");
+  yourNotes.classList.add("yourNotes");
+}
+
+// ---------------------------------------------------------
+
+/**
+ * Fügt einen Keyup-Listener zum Suchfeld hinzu.
+ */
+function addKeyupListener() {
+  let inputFilterphrase = document.getElementById("inputSearch");
+  inputFilterphrase.addEventListener("keyup", () => {
+    filterNotes(inputFilterphrase.value);
+  });
+}
+
+/**
+ * Filtert die Notizen nach dem angegebenen Suchbegriff und rendert das Ergebnis.
+ * @param {string} phrase - Der Suchbegriff, nach dem gesucht werden soll.
+ */
+function filterNotes(phrase) {
+  let filteredNotes = notesTitle.filter(
+    (title, index) =>
+      title.toLowerCase().includes(phrase.toLowerCase()) ||
+      writingsNotes[index].toLowerCase().includes(phrase.toLowerCase())
+  );
+
+  renderFilteredNotes(filteredNotes);
+}
+
+/**
+ * Rendert die gefilterten Notizen.
+ * @param {Array} filteredNotes - Das Array mit den gefilterten Notizen.
+ */
+function renderFilteredNotes(filteredNotes) {
+  let content = document.getElementById("content");
+  content.innerHTML = "";
+
+  filteredNotes.forEach((title, index) => {
+    content.innerHTML += renderNotesHTML(title, writingsNotes[index], index);
+  });
 }

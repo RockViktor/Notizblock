@@ -32,12 +32,17 @@
         <button class="buttonSearch" aria-label="Search" role="button">
           <img class="magnGlass" src="./img/Lupe.png" alt="Lupe" />
         </button>
-        <input class="inputSearch" type="text" placeholder="Search" />
+        <input
+          class="inputSearch"
+          id="inputSearch"
+          type="text"
+          placeholder="Search"
+        />
       </div>
     </header>
 
     <section class="headline">
-      <h1 class="yourNotes">Your Notes</h1>
+      <h1 id="yourNotes" class="yourNotes">Your Notes</h1>
 
       <form class="contAddNote" onsubmit="addNotes()">
         <input
@@ -80,6 +85,7 @@
       />
     </div>
 
+    <biv class="alertText" style="display: none;"></biv><h1>Fülle die Felder aus.</h1>></body>div>
     <footer class="footer" w3-include-html="./templates/footer.html"></footer>
   </body>
 </html>
