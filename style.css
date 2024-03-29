@@ -23,6 +23,13 @@ body {
   align-items: center;
 }
 
+.alertText {
+  position: absolute;
+  left: 45%;
+  top: 45vh;
+  background-color: green;
+}
+
 header {
   display: flex;
   gap: 1rem;
