@@ -44,7 +44,11 @@
     <section class="headline">
       <h1 id="yourNotes" class="yourNotes">Your Notes</h1>
 
-      <form class="contAddNote" onsubmit="addNotes()">
+      <div class="alertTextNone" id="alertText">
+        <h1>Fülle die Felder aus.</h1>
+      </div>
+
+      <form class="contAddNote" onsubmit="addNotes(); return false;">
         <input
           required
           onclick="showInputBox()"
@@ -85,9 +89,6 @@
       />
     </div>
 
-    <div class="alertText" id="alertText" style="display: none">
-      <h1>Fülle die Felder aus.</h1>
-    </div>
     <footer class="footer" w3-include-html="./templates/footer.html"></footer>
   </body>
 </html>

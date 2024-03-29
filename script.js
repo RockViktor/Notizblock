@@ -126,7 +126,9 @@ function addNotes() {
 }
 
 function alertFunction() {
-  document.getElementById("alertText").style.display = "block";
+  let alertText = document.getElementById("alertText");
+  alertText.classList.remove("alertText");
+  alertText.classList.add("alertTextShow");
 }
 
 /**

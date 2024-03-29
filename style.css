@@ -23,11 +23,22 @@ body {
   align-items: center;
 }
 
-.alertText {
+.alertTextNone {
+  display: none;
+}
+
+.alertTextShow {
+  display: flex;
   position: absolute;
-  left: 45%;
-  top: 45vh;
-  background-color: green;
+  left: 10%;
+  top: 26vh;
+  background-color: rgb(127, 31, 58);
+  width: 15rem;
+  height: 9rem;
+  border: black 1px solid;
+  border-radius: 0.7rem;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
