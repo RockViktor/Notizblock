@@ -29,17 +29,12 @@ body {
 
 .alertTextShow {
   display: flex;
-  position: absolute;
-  left: 10%;
-  top: 26vh;
-  background-color: rgb(127, 31, 58);
-  width: 15rem;
-  height: 9rem;
-  border: black 1px solid;
-  border-radius: 0.7rem;
   justify-content: center;
   align-items: center;
+  font-size: smaller;
+  padding-left: 70px;
 }
+
 
 header {
   display: flex;
@@ -424,6 +419,11 @@ textarea {
 
   .YourDeletedNotes {
     font-size: 18px;
+    padding-left: 70px;
+  }
+
+  .alertTextShow {
+    font-size: 12px;
   }
 }
 

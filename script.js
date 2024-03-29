@@ -125,6 +125,9 @@ function addNotes() {
   }
 }
 
+/**
+ * Push alert if clear field.
+ */
 function alertFunction() {
   let alertText = document.getElementById("alertText");
   alertText.classList.remove("alertText");
@@ -238,8 +241,6 @@ function colorArea(yourNotes) {
   yourNotes.classList.remove("YourDeletedNotes");
   yourNotes.classList.add("yourNotes");
 }
-
-// ---------------------------------------------------------
 
 /**
  * Fügt einen Keyup-Listener zum Suchfeld hinzu.
