@@ -480,7 +480,7 @@ textarea {
   }
 }
 
-@media only screen and (max-width: 3333px) and (min-width: 577px) {
+@media only screen and (max-width: 5555px) and (min-width: 577px) {
   .inputSearch {
     width: 150%;
   }
